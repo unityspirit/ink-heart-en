@@ -1,4 +1,4 @@
-﻿/* ================================================================
+/* ================================================================
    INK HEART — Тату-студия | styles.css
    Design: Dark #050505 bg + Deep red neon #C0392B accent
    Fonts: Oswald (headings) + Inter (body)
@@ -11,18 +11,18 @@
   --accent2:    #E74C3C;
   --white:      #FFFFFF;
   --off-white:  #F0EDE8;
-  --muted:      #888;
+  --muted:      rgba(255,255,255,0.9);
 
   /* 8-direction black text-shadow for all text on video */
   --ts-dark:
-    1px  1px 0 rgba(0,0,0,1),
-   -1px -1px 0 rgba(0,0,0,1),
-    1px -1px 0 rgba(0,0,0,1),
-   -1px  1px 0 rgba(0,0,0,1),
-    2px  2px 0 rgba(0,0,0,0.8),
-   -2px -2px 0 rgba(0,0,0,0.8),
-    0 0 8px  rgba(0,0,0,0.9),
-    0 0 20px rgba(0,0,0,0.7);
+   -1px -1px 0 #000,
+    1px -1px 0 #000,
+   -1px  1px 0 #000,
+    1px  1px 0 #000,
+    0   -1px 0 #000,
+    0    1px 0 #000,
+   -1px  0   0 #000,
+    1px  0   0 #000;
 
   /* Card style */
   --card-bg:     rgba(0,0,0,0.50);
@@ -92,6 +92,20 @@ img { display: block; max-width: 100%; }
   flex-direction: column;
   align-items: center;
   gap: 24px;
+}
+
+.loader-logo-img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  margin-bottom: 16px;
+  filter: drop-shadow(0 0 20px rgba(230,57,70,0.4));
+  animation: logoPulse 2s ease-in-out infinite;
+}
+
+@keyframes logoPulse {
+  0%, 100% { opacity: 0.8; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.05); }
 }
 
 .loader-logo {
@@ -165,10 +179,17 @@ img { display: block; max-width: 100%; }
 }
 
 .nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.nav-logo img {
   width: 36px;
   height: 36px;
   object-fit: contain;
-  mix-blend-mode: screen;
+  background: none;
 }
 
 .nav-brand-text {
@@ -193,7 +214,7 @@ img { display: block; max-width: 100%; }
   font-weight: 500;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.75);
+  color: rgba(255,255,255,0.9);
   transition: color 0.25s;
   position: relative;
 }
@@ -523,7 +544,7 @@ img { display: block; max-width: 100%; }
   font-family: 'Inter', sans-serif;
   font-size: clamp(0.85rem, 1.5vw, 1rem);
   font-weight: 300;
-  color: rgba(255,255,255,0.75);
+  color: rgba(255,255,255,0.9);
   text-shadow: var(--ts-dark);
   line-height: 1.7;
 }
@@ -577,7 +598,7 @@ img { display: block; max-width: 100%; }
   font-size: 0.65rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.5);
+  color: rgba(255,255,255,0.9);
   text-shadow: var(--ts-dark);
 }
 
@@ -697,7 +718,7 @@ img { display: block; max-width: 100%; }
   font-family: 'Inter', sans-serif;
   font-size: clamp(0.8rem, 1.2vw, 0.9rem);
   font-weight: 300;
-  color: rgba(255,255,255,0.75);
+  color: rgba(255,255,255,0.9);
   line-height: 1.65;
   text-shadow: var(--ts-dark);
 }
@@ -1043,7 +1064,7 @@ a.contact-value:hover { color: var(--accent2); }
   font-weight: 400;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.55);
+  color: rgba(255,255,255,0.9);
   text-shadow: var(--ts-dark);
 }
 
@@ -1084,7 +1105,7 @@ a.contact-value:hover { color: var(--accent2); }
   font-family: 'Inter', sans-serif;
   font-size: 0.75rem;
   font-weight: 300;
-  color: rgba(255,255,255,0.4);
+  color: rgba(255,255,255,0.85);
   letter-spacing: 0.1em;
   text-shadow: var(--ts-dark);
 }

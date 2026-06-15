@@ -1,3 +1,10 @@
-﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 100" width="400" height="100">
-  <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="system-ui, sans-serif" font-weight="800" font-size="36" fill="#ffffff" letter-spacing="2">INK HEART</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none">
+  <!-- Heart shape -->
+  <path d="M60 100 C20 70 5 45 25 28 C35 18 50 20 60 35 C70 20 85 18 95 28 C115 45 100 70 60 100Z" fill="none" stroke="#e63946" stroke-width="2.5"/>
+  <!-- Tattoo needle -->
+  <line x1="60" y1="15" x2="60" y2="55" stroke="#e63946" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="60" cy="12" r="3" fill="#e63946"/>
+  <!-- Ink drops -->
+  <circle cx="50" cy="60" r="2" fill="#e63946" opacity="0.6"/>
+  <circle cx="70" cy="55" r="1.5" fill="#e63946" opacity="0.4"/>
 </svg>
