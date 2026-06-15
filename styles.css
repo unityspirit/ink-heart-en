@@ -11,18 +11,18 @@
   --accent2:    #E74C3C;
   --white:      #FFFFFF;
   --off-white:  #F0EDE8;
-  --muted:      rgba(255,255,255,0.9);
+  --muted:      #888;
 
   /* 8-direction black text-shadow for all text on video */
   --ts-dark:
-   -1px -1px 0 #000,
-    1px -1px 0 #000,
-   -1px  1px 0 #000,
-    1px  1px 0 #000,
-    0   -1px 0 #000,
-    0    1px 0 #000,
-   -1px  0   0 #000,
-    1px  0   0 #000;
+    1px  1px 0 rgba(0,0,0,1),
+   -1px -1px 0 rgba(0,0,0,1),
+    1px -1px 0 rgba(0,0,0,1),
+   -1px  1px 0 rgba(0,0,0,1),
+    2px  2px 0 rgba(0,0,0,0.8),
+   -2px -2px 0 rgba(0,0,0,0.8),
+    0 0 8px  rgba(0,0,0,0.9),
+    0 0 20px rgba(0,0,0,0.7);
 
   /* Card style */
   --card-bg:     rgba(0,0,0,0.50);
@@ -95,16 +95,14 @@ img { display: block; max-width: 100%; }
 }
 
 .loader-logo-img {
-  width: 80px;
-  height: 80px;
+  width: 72px;
+  height: 72px;
   object-fit: contain;
-  margin-bottom: 16px;
-  filter: drop-shadow(0 0 20px rgba(230,57,70,0.4));
-  animation: logoPulse 2s ease-in-out infinite;
+  animation: pulse-logo 2s ease-in-out infinite;
 }
 
-@keyframes logoPulse {
-  0%, 100% { opacity: 0.8; transform: scale(1); }
+@keyframes pulse-logo {
+  0%, 100% { opacity: 0.7; transform: scale(1); }
   50% { opacity: 1; transform: scale(1.05); }
 }
 
@@ -146,6 +144,14 @@ img { display: block; max-width: 100%; }
   border-radius: 2px;
 }
 
+.loader-pct {
+  font-family: 'Oswald', sans-serif;
+  font-size: clamp(1rem, 3vw, 1.4rem);
+  font-weight: 600;
+  color: var(--primary);
+  letter-spacing: 0.1em;
+}
+
 .loader-hint {
   font-family: 'Inter', sans-serif;
   font-size: 0.75rem;
@@ -179,17 +185,10 @@ img { display: block; max-width: 100%; }
 }
 
 .nav-logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  text-decoration: none;
-}
-
-.nav-logo img {
   width: 36px;
   height: 36px;
   object-fit: contain;
-  background: none;
+  mix-blend-mode: screen;
 }
 
 .nav-brand-text {
@@ -598,7 +597,7 @@ img { display: block; max-width: 100%; }
   font-size: 0.65rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.9);
+  color: rgba(255,255,255,0.5);
   text-shadow: var(--ts-dark);
 }
 
@@ -839,8 +838,8 @@ img { display: block; max-width: 100%; }
   font-size: 0.7rem;
   font-weight: 700;
   letter-spacing: 0.2em;
-  color: var(--primary);
-  text-shadow: var(--ts-dark);
+  color: var(--accent2);
+  text-shadow: 0 0 8px rgba(231,76,60,0.6), var(--ts-dark);
 }
 
 .step-icon {
@@ -977,8 +976,10 @@ img { display: block; max-width: 100%; }
 /* ─── Contact Section ────────────────────────────────────────── */
 .contact-layout {
   display: grid;
-  grid-template-columns: 1fr 1.4fr;
+  grid-template-columns: 1fr;
   gap: 40px;
+  max-width: 520px;
+  margin: 0 auto;
 }
 
 .contact-card {
@@ -1064,7 +1065,7 @@ a.contact-value:hover { color: var(--accent2); }
   font-weight: 400;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.9);
+  color: rgba(255,255,255,0.55);
   text-shadow: var(--ts-dark);
 }
 
@@ -1105,7 +1106,7 @@ a.contact-value:hover { color: var(--accent2); }
   font-family: 'Inter', sans-serif;
   font-size: 0.75rem;
   font-weight: 300;
-  color: rgba(255,255,255,0.85);
+  color: rgba(255,255,255,0.4);
   letter-spacing: 0.1em;
   text-shadow: var(--ts-dark);
 }

@@ -3,148 +3,321 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <title>INK HEART — Tattoo Studio</title>
-  <meta name="description" content="Professional tattoo studio. Realism, Japanese, blackwork. Sterile single-use materials. 4 master artists, since 2015." />
-  <meta name="keywords" content="tattoo studio, realism tattoo, Japanese tattoo, blackwork, custom tattoo" />
-  <meta property="og:title" content="INK HEART — Tattoo Studio" />
-  <meta property="og:description" content="Professional tattoo studio. Realism, Japanese, blackwork. 4 masters, sterile guarantee." />
+  <title>INK HEART — Professional Tattoo Studio</title>
+  <meta name="description" content="INK HEART — professional tattoo studio since 2015. Realism, graphic, Japanese tradition. Sterile materials only. Book online." />
+  <meta name="keywords" content="tattoo studio, tattoo, realism, blackwork, Japanese tattoo, INK HEART, tattoo art, custom tattoo" />
+  <meta property="og:title" content="INK HEART — Professional Tattoo Studio" />
+  <meta property="og:description" content="Professional tattoo studio since 2015. Realism, graphic, Japanese tradition. Your body is our canvas." />
   <meta property="og:image" content="images/logo.svg" />
-  <meta property="og:url" content="https://inkheart.ru" />
+  <meta property="og:url" content="https://unityspirit.github.io/ink-heart-en/" />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="en_US" />
   <link rel="icon" type="image/png" href="images/logo.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <canvas id="gl-canvas"></canvas>
+  <div class="grain-overlay"></div>
+
   <div id="loader">
     <div class="loader-inner">
       <img src="images/logo.svg" alt="INK HEART" class="loader-logo-img" />
-      <div class="loader-logo">INK <span style="color:#E74C3C">HEART</span></div>
-      <div class="progress-track"><div id="progress-bar"></div></div>
-      <div class="loader-text">Loading...</div>
+      <div class="loader-logo">
+        <span class="loader-ink">INK</span>
+        <span class="loader-heart">HEART</span>
+      </div>
+      <div class="loader-bar-track"><div id="progress-bar"></div></div>
+      <p class="loader-pct" id="loader-pct">0%</p>
+      <p class="loader-hint">Loading...</p>
     </div>
   </div>
-  <canvas id="gl-canvas"></canvas>
-  <canvas id="particle-canvas"></canvas>
-  <div class="grain-overlay"></div>
+
   <nav class="navbar" id="navbar">
-    <div class="nav-inner">
-      <a href="#hero" class="nav-logo">
-        <img src="images/logo.svg" alt="INK HEART" onerror="this.style.display='none'" />
-        <span>INK HEART</span>
-      </a>
-      <ul class="nav-links">
-        <li><a href="#services" class="nav-link">Styles</a></li>
-        <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
-        <li><a href="#process" class="nav-link">Process</a></li>
-        <li><a href="#about" class="nav-link">About</a></li>
-        <li><a href="#contact" class="nav-link">Book</a></li>
-      </ul>
-      <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    <div class="nav-brand">
+      <img src="images/logo.svg" alt="INK HEART" class="nav-logo" />
+      <span class="nav-brand-text"><span class="brand-ink">INK</span> <span class="brand-heart">HEART</span></span>
     </div>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#services" class="nav-link">Styles</a></li>
+      <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+      <li><a href="#process" class="nav-link">Process</a></li>
+      <li><a href="#about" class="nav-link">About</a></li>
+      <li><a href="#contact" class="nav-link cta-nav">Book Now</a></li>
+    </ul>
+    <button class="burger" id="burger-btn" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
   </nav>
-  <div class="nav-drawer" id="nav-drawer" hidden>
-    <div class="drawer-backdrop" id="drawer-backdrop"></div>
-    <div class="drawer-panel">
-      <button class="drawer-close" id="drawer-close">✕</button>
-      <ul>
-        <li><a href="#services" class="drawer-link">Styles</a></li>
-        <li><a href="#portfolio" class="drawer-link">Portfolio</a></li>
-        <li><a href="#process" class="drawer-link">Process</a></li>
-        <li><a href="#about" class="drawer-link">About</a></li>
-        <li><a href="#contact" class="drawer-link">Book</a></li>
-      </ul>
+
+  <div class="nav-drawer" id="nav-drawer">
+    <button class="drawer-close" id="drawer-close" aria-label="Close">&#10005;</button>
+    <div class="drawer-brand"><span class="drawer-ink">INK</span><span class="drawer-heart">HEART</span></div>
+    <ul class="drawer-links">
+      <li><a href="#services" class="drawer-link">Styles</a></li>
+      <li><a href="#portfolio" class="drawer-link">Portfolio</a></li>
+      <li><a href="#process" class="drawer-link">Process</a></li>
+      <li><a href="#about" class="drawer-link">About</a></li>
+      <li><a href="#contact" class="drawer-link drawer-cta">Book Now</a></li>
+    </ul>
+    <div class="drawer-footer">
+      <p>contact@unityspiritpartners.com</p>
+      <p>unityspiritpartners.com</p>
     </div>
   </div>
-  <div id="ui-layer"><div class="stage">
-    <section class="page is-active" data-index="0" id="hero">
-      <div class="hero-content">
-        <div class="hero-badge reveal-3d">EST. 2015</div>
-        <h1 class="hero-title reveal-3d">INK<br/>HEART</h1>
-        <p class="hero-subtitle reveal-3d">Art on skin</p>
-        <p class="hero-desc reveal-3d">Realism, graphic art, Japanese tradition.<br/>Sterile single-use materials only.</p>
-        <div class="hero-btns reveal-3d">
-          <a href="#portfolio" class="btn-primary">Portfolio</a>
-          <a href="#contact" class="btn-outline">Book Now</a>
+  <div class="drawer-backdrop" id="drawer-backdrop"></div>
+
+  <div id="ui-layer">
+    <div class="stage">
+
+      <!-- SECTION 0 — HERO -->
+      <section class="page is-active" data-index="0" id="hero">
+        <div class="hero-content">
+          <div class="hero-tag reveal-3d">&#128394; Tattoo Studio &middot; Est. 2015</div>
+          <h1 class="hero-title reveal-3d">
+            <span class="title-main">INK</span>
+            <span class="title-accent">HEART</span>
+          </h1>
+          <p class="hero-art reveal-3d">Art on Skin</p>
+          <p class="hero-subtitle reveal-3d">Your body is our canvas</p>
+          <p class="hero-desc reveal-3d">Realism, graphic art, Japanese tradition.<br />We use only sterile materials and premium inks.</p>
+          <div class="hero-cta reveal-3d">
+            <a href="#portfolio" class="btn btn-primary">Portfolio</a>
+            <a href="#contact" class="btn btn-outline">Book Now</a>
+          </div>
+          <div class="hero-divider reveal-3d">
+            <span class="divider-line"></span>
+            <span class="divider-icon">&#10022;</span>
+            <span class="divider-line"></span>
+          </div>
         </div>
-        <div class="hero-facts reveal-3d">
-          <div class="fact-item"><span class="fact-num">9</span><span class="fact-label">years</span></div>
-          <div class="fact-item"><span class="fact-num">5000+</span><span class="fact-label">tattoos</span></div>
-          <div class="fact-item"><span class="fact-num">4</span><span class="fact-label">masters</span></div>
+        <div class="scroll-hint">
+          <span class="scroll-text">Scroll down</span>
+          <span class="scroll-arrow">&#8595;</span>
         </div>
-      </div>
-      <div class="scroll-hint reveal-3d"><span>↓</span></div>
-    </section>
-    <section class="page" data-index="1" id="services">
-      <div class="section-content">
-        <div class="section-header reveal-3d"><h2 class="section-title">STYLES</h2><p class="section-subtitle">We work in any direction</p></div>
-        <div class="cards-grid reveal-3d">
-          <div class="card"><div class="card-icon">🖋️</div><h3 class="card-title">Black &amp; Grey Realism</h3><p class="card-text">Photorealistic portraits and nature studies</p></div>
-          <div class="card"><div class="card-icon">🔴</div><h3 class="card-title">Colour Realism</h3><p class="card-text">Vivid colours, volume, photographic precision</p></div>
-          <div class="card"><div class="card-icon">⬛</div><h3 class="card-title">Blackwork &amp; Geometric</h3><p class="card-text">Dark geometric and ornamental compositions</p></div>
-          <div class="card"><div class="card-icon">🌸</div><h3 class="card-title">Japanese Traditional</h3><p class="card-text">Traditional Irezumi motifs and compositions</p></div>
-        </div>
-      </div>
-    </section>
-    <section class="page" data-index="2" id="portfolio">
-      <div class="section-content">
-        <div class="section-header reveal-3d"><h2 class="section-title">OUR WORK</h2><p class="section-subtitle">Selected tattoos</p></div>
-        <div class="cards-grid reveal-3d">
-          <div class="card"><div class="card-icon">💪</div><h3 class="card-title">Portrait Realism</h3><p class="card-text">Full sleeve, 40 hours work</p></div>
-          <div class="card"><div class="card-icon">🐉</div><h3 class="card-title">Japanese Dragon</h3><p class="card-text">Back piece, traditional Irezumi style</p></div>
-          <div class="card"><div class="card-icon">⬡</div><h3 class="card-title">Geometric Sleeve</h3><p class="card-text">Blackwork with mandala centrepiece</p></div>
-          <div class="card"><div class="card-icon">🌿</div><h3 class="card-title">Botanical</h3><p class="card-text">Fine lines, feminine shoulder placement</p></div>
-        </div>
-      </div>
-    </section>
-    <section class="page" data-index="3" id="process">
-      <div class="section-content">
-        <div class="section-header reveal-3d"><h2 class="section-title">HOW IT WORKS</h2></div>
-        <div class="process-steps reveal-3d">
-          <div class="step"><div class="step-num">01</div><div class="step-icon">💬</div><h3 class="step-title">Consultation</h3><p class="step-text">Discuss idea, style and placement</p></div>
-          <div class="step-arrow">→</div>
-          <div class="step"><div class="step-num">02</div><div class="step-icon">🎨</div><h3 class="step-title">Design</h3><p class="step-text">Custom sketch made for your request</p></div>
-          <div class="step-arrow">→</div>
-          <div class="step"><div class="step-num">03</div><div class="step-icon">📋</div><h3 class="step-title">Stencil</h3><p class="step-text">Apply stencil and confirm placement</p></div>
-          <div class="step-arrow">→</div>
-          <div class="step"><div class="step-num">04</div><div class="step-icon">✅</div><h3 class="step-title">Tattoo</h3><p class="step-text">Work done, full aftercare instructions</p></div>
-        </div>
-      </div>
-    </section>
-    <section class="page" data-index="4" id="about">
-      <div class="section-content">
-        <div class="section-header reveal-3d"><h2 class="section-title">THE STUDIO</h2><p class="section-subtitle">Professional tattoo studio since 2015</p></div>
-        <div class="about-layout reveal-3d">
-          <div class="about-text">
-            <p>INK HEART is where ideas become art. Every session uses sterile single-use needles, professional grade inks, and individually wrapped equipment.</p>
-            <p>We never rush. Great tattoos take time — and we give every client the full attention they deserve.</p>
-            <div class="about-stats">
-              <div class="stat"><span class="stat-num" style="color:#E74C3C">9</span><span class="stat-label">years</span></div>
-              <div class="stat"><span class="stat-num" style="color:#E74C3C">5000+</span><span class="stat-label">works</span></div>
-              <div class="stat"><span class="stat-num" style="color:#E74C3C">4</span><span class="stat-label">masters</span></div>
-              <div class="stat"><span class="stat-num" style="color:#E74C3C">100%</span><span class="stat-label">sterile</span></div>
+      </section>
+
+      <!-- SECTION 1 — STYLES -->
+      <section class="page" data-index="1" id="services">
+        <div class="section-container">
+          <div class="section-header reveal-3d">
+            <span class="section-eyebrow">Specializations</span>
+            <h2 class="section-title">STYLES</h2>
+            <p class="section-subtitle">We work in every tattoo direction</p>
+          </div>
+          <div class="cards-grid reveal-3d">
+            <div class="card card-service">
+              <div class="card-icon">&#128395;</div>
+              <h3 class="card-title">Black &amp; Grey Realism</h3>
+              <div class="card-divider"></div>
+              <p class="card-text">Photorealistic portraits and nature motifs in black-and-grey technique with subtle tonal gradations</p>
+              <div class="card-tag">Realism</div>
+            </div>
+            <div class="card card-service">
+              <div class="card-icon">&#128308;</div>
+              <h3 class="card-title">Colour Realism</h3>
+              <div class="card-divider"></div>
+              <p class="card-text">Vivid colours, depth, and photographic precision. Bold pieces that never lose their vibrancy</p>
+              <div class="card-tag">Colour</div>
+            </div>
+            <div class="card card-service">
+              <div class="card-icon">&#11035;</div>
+              <h3 class="card-title">Blackwork &amp; Geometric</h3>
+              <div class="card-divider"></div>
+              <p class="card-text">Bold geometric and ornamental designs — mandalas, patterns, tribal motifs executed in solid black</p>
+              <div class="card-tag">Blackwork</div>
+            </div>
+            <div class="card card-service">
+              <div class="card-icon">&#127800;</div>
+              <h3 class="card-title">Japanese Traditional</h3>
+              <div class="card-divider"></div>
+              <p class="card-text">Traditional Japanese motifs (Irezumi): dragons, koi fish, chrysanthemums, samurai warriors</p>
+              <div class="card-tag">Japanese</div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
-    <section class="page" data-index="5" id="contact">
-      <div class="section-content">
-        <div class="section-header reveal-3d"><h2 class="section-title">BOOK NOW</h2><p class="section-subtitle">Reserve your session</p></div>
-        <div class="contact-layout reveal-3d">
-          <div class="contact-info">
-            <div class="contact-item"><span class="contact-icon">📞</span><a href="tel:+79054991618">+7 (905) 499-16-18</a></div>
-            <div class="contact-item"><span class="contact-icon">✉️</span><a href="mailto:team@globalplus.tech">team@globalplus.tech</a></div>
-            <div class="contact-item"><span class="contact-icon">📍</span><span>St. Petersburg, Nevsky Ave., 88</span></div>
-            <div class="contact-item"><span class="contact-icon">🕐</span><span>Tue–Sun: 12:00–22:00</span></div>
+      </section>
+
+      <!-- SECTION 2 — PORTFOLIO -->
+      <section class="page" data-index="2" id="portfolio">
+        <div class="section-container">
+          <div class="section-header reveal-3d">
+            <span class="section-eyebrow">Gallery</span>
+            <h2 class="section-title">OUR WORK</h2>
+            <p class="section-subtitle">Featured tattoo pieces</p>
           </div>
-          
+          <div class="cards-grid reveal-3d">
+            <div class="card card-portfolio">
+              <div class="portfolio-img-wrap">
+                <div class="portfolio-placeholder port-1">
+                  <div class="port-icon">&#127912;</div>
+                  <div class="port-style">BLACK &amp; GREY</div>
+                </div>
+              </div>
+              <div class="portfolio-info">
+                <h3 class="portfolio-title">Portrait Realism</h3>
+                <p class="portfolio-meta">Full sleeve &middot; 40 hours of work</p>
+              </div>
+            </div>
+            <div class="card card-portfolio">
+              <div class="portfolio-img-wrap">
+                <div class="portfolio-placeholder port-2">
+                  <div class="port-icon">&#129409;</div>
+                  <div class="port-style">JAPANESE</div>
+                </div>
+              </div>
+              <div class="portfolio-info">
+                <h3 class="portfolio-title">Japanese Dragon</h3>
+                <p class="portfolio-meta">Back piece &middot; traditional style</p>
+              </div>
+            </div>
+            <div class="card card-portfolio">
+              <div class="portfolio-img-wrap">
+                <div class="portfolio-placeholder port-3">
+                  <div class="port-icon">&#11042;</div>
+                  <div class="port-style">BLACKWORK</div>
+                </div>
+              </div>
+              <div class="portfolio-info">
+                <h3 class="portfolio-title">Geometric Sleeve</h3>
+                <p class="portfolio-meta">Blackwork with mandala elements</p>
+              </div>
+            </div>
+            <div class="card card-portfolio">
+              <div class="portfolio-img-wrap">
+                <div class="portfolio-placeholder port-4">
+                  <div class="port-icon">&#127807;</div>
+                  <div class="port-style">FINE LINE</div>
+                </div>
+              </div>
+              <div class="portfolio-info">
+                <h3 class="portfolio-title">Botanical</h3>
+                <p class="portfolio-meta">Fine line &middot; shoulder piece</p>
+              </div>
+            </div>
+          </div>
         </div>
-        <footer class="site-footer"><p>© 2024 INK HEART. All rights reserved.</p></footer>
-      </div>
-    </section>
-  </div></div>
+      </section>
+
+      <!-- SECTION 3 — PROCESS -->
+      <section class="page" data-index="3" id="process">
+        <div class="section-container">
+          <div class="section-header reveal-3d">
+            <span class="section-eyebrow">Working with us</span>
+            <h2 class="section-title">HOW WE WORK</h2>
+          </div>
+          <div class="process-grid reveal-3d">
+            <div class="process-step">
+              <div class="step-num">01</div>
+              <div class="step-icon">&#128172;</div>
+              <h3 class="step-title">Consultation</h3>
+              <p class="step-text">We discuss your idea, style, and placement. Free and no obligation — come chat with us</p>
+            </div>
+            <div class="process-step">
+              <div class="step-num">02</div>
+              <div class="step-icon">&#127912;</div>
+              <h3 class="step-title">Design</h3>
+              <p class="step-text">A custom design tailored to your vision. We refine it until you say "yes"</p>
+            </div>
+            <div class="process-step">
+              <div class="step-num">03</div>
+              <div class="step-icon">&#128203;</div>
+              <h3 class="step-title">Stencil</h3>
+              <p class="step-text">We apply and approve the placement on your body. You see the result before we start</p>
+            </div>
+            <div class="process-step">
+              <div class="step-num">04</div>
+              <div class="step-icon">&#9989;</div>
+              <h3 class="step-title">Tattoo + Aftercare</h3>
+              <p class="step-text">We work in a comfortable atmosphere and provide detailed aftercare instructions for healing</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 4 — ABOUT -->
+      <section class="page" data-index="4" id="about">
+        <div class="section-container">
+          <div class="about-layout">
+            <div class="about-left reveal-3d">
+              <span class="section-eyebrow">Studio</span>
+              <h2 class="section-title">ABOUT US</h2>
+              <p class="about-sub">Professional tattoo studio since 2015</p>
+              <p class="about-text">INK HEART is a place where ideas become art. We create unique pieces that will stay with you for a lifetime.</p>
+              <p class="about-text">Only sterile supplies, only single-use needles, only professional-grade inks from the world's leading brands.</p>
+              <div class="about-badges">
+                <span class="badge">Guaranteed Sterility</span>
+                <span class="badge">Single-Use Needles</span>
+                <span class="badge">Premium Inks</span>
+              </div>
+            </div>
+            <div class="about-right reveal-3d">
+              <div class="facts-grid">
+                <div class="fact-card">
+                  <div class="fact-num">9</div>
+                  <div class="fact-label">years of experience</div>
+                </div>
+                <div class="fact-card">
+                  <div class="fact-num">5000<span class="fact-plus">+</span></div>
+                  <div class="fact-label">tattoos done</div>
+                </div>
+                <div class="fact-card">
+                  <div class="fact-num">4</div>
+                  <div class="fact-label">artists</div>
+                </div>
+                <div class="fact-card">
+                  <div class="fact-num">100<span class="fact-plus">%</span></div>
+                  <div class="fact-label">sterility</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 5 — CONTACT -->
+      <section class="page" data-index="5" id="contact">
+        <div class="section-container">
+          <div class="section-header reveal-3d">
+            <span class="section-eyebrow">Unity Spirit Partners</span>
+            <h2 class="section-title">WANT A WEBSITE LIKE THIS?</h2>
+            <p class="section-subtitle">Contact us — we'll build one for you</p>
+          </div>
+          <div class="contact-layout reveal-3d">
+            <div class="contact-info">
+              <div class="contact-card">
+                <div class="contact-item">
+                  <span class="contact-icon">&#9993;</span>
+                  <div>
+                    <div class="contact-label">Email</div>
+                    <a href="mailto:contact@unityspiritpartners.com" class="contact-value">contact@unityspiritpartners.com</a>
+                  </div>
+                </div>
+                <div class="contact-item">
+                  <span class="contact-icon">&#127760;</span>
+                  <div>
+                    <div class="contact-label">Website</div>
+                    <a href="https://unityspiritpartners.com" target="_blank" class="contact-value">unityspiritpartners.com</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="contact-cta-wrap reveal-3d" style="text-align:center;margin-top:20px;">
+            <a href="https://unityspiritpartners.com/#page-4" class="btn btn-outline">BACK TO MAIN PAGE</a>
+          </div>
+          <div class="site-footer reveal-3d">
+            <p class="footer-copy">&copy; 2024 INK HEART. Sample site by Unity Spirit Partners.</p>
+            <p class="footer-tagline">Your body is our canvas &#10022;</p>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </div>
+
   <script src="app.js"></script>
 </body>
 </html>
