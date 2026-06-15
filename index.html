@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>INK HEART — Tattoo Studio</title>
+  <meta name="description" content="Professional tattoo studio. Realism, Japanese, blackwork. Sterile single-use materials. 4 master artists, since 2015." />
+  <meta name="keywords" content="tattoo studio, realism tattoo, Japanese tattoo, blackwork, custom tattoo" />
+  <meta property="og:title" content="INK HEART — Tattoo Studio" />
+  <meta property="og:description" content="Professional tattoo studio. Realism, Japanese, blackwork. 4 masters, sterile guarantee." />
+  <meta property="og:image" content="images/logo.png" />
+  <meta property="og:url" content="https://inkheart.ru" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="en_US" />
+  <link rel="icon" type="image/png" href="images/logo.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="loader">
+    <div class="loader-inner">
+      <div class="loader-logo">INK <span style="color:#E74C3C">HEART</span></div>
+      <div class="progress-track"><div id="progress-bar"></div></div>
+      <div class="loader-text">Loading...</div>
+    </div>
+  </div>
+  <canvas id="gl-canvas"></canvas>
+  <canvas id="particle-canvas"></canvas>
+  <div class="grain-overlay"></div>
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo">
+        <img src="images/logo.png" alt="INK HEART" onerror="this.style.display='none'" />
+        <span>INK HEART</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#services" class="nav-link">Styles</a></li>
+        <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+        <li><a href="#process" class="nav-link">Process</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#contact" class="nav-link">Book</a></li>
+      </ul>
+      <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+  <div class="nav-drawer" id="nav-drawer" hidden>
+    <div class="drawer-backdrop" id="drawer-backdrop"></div>
+    <div class="drawer-panel">
+      <button class="drawer-close" id="drawer-close">✕</button>
+      <ul>
+        <li><a href="#services" class="drawer-link">Styles</a></li>
+        <li><a href="#portfolio" class="drawer-link">Portfolio</a></li>
+        <li><a href="#process" class="drawer-link">Process</a></li>
+        <li><a href="#about" class="drawer-link">About</a></li>
+        <li><a href="#contact" class="drawer-link">Book</a></li>
+      </ul>
+    </div>
+  </div>
+  <div id="ui-layer"><div class="stage">
+    <section class="page is-active" data-index="0" id="hero">
+      <div class="hero-content">
+        <div class="hero-badge reveal-3d">EST. 2015</div>
+        <h1 class="hero-title reveal-3d">INK<br/>HEART</h1>
+        <p class="hero-subtitle reveal-3d">Art on skin</p>
+        <p class="hero-desc reveal-3d">Realism, graphic art, Japanese tradition.<br/>Sterile single-use materials only.</p>
+        <div class="hero-btns reveal-3d">
+          <a href="#portfolio" class="btn-primary">Portfolio</a>
+          <a href="#contact" class="btn-outline">Book Now</a>
+        </div>
+        <div class="hero-facts reveal-3d">
+          <div class="fact-item"><span class="fact-num">9</span><span class="fact-label">years</span></div>
+          <div class="fact-item"><span class="fact-num">5000+</span><span class="fact-label">tattoos</span></div>
+          <div class="fact-item"><span class="fact-num">4</span><span class="fact-label">masters</span></div>
+        </div>
+      </div>
+      <div class="scroll-hint reveal-3d"><span>↓</span></div>
+    </section>
+    <section class="page" data-index="1" id="services">
+      <div class="section-content">
+        <div class="section-header reveal-3d"><h2 class="section-title">STYLES</h2><p class="section-subtitle">We work in any direction</p></div>
+        <div class="cards-grid reveal-3d">
+          <div class="card"><div class="card-icon">🖋️</div><h3 class="card-title">Black &amp; Grey Realism</h3><p class="card-text">Photorealistic portraits and nature studies</p></div>
+          <div class="card"><div class="card-icon">🔴</div><h3 class="card-title">Colour Realism</h3><p class="card-text">Vivid colours, volume, photographic precision</p></div>
+          <div class="card"><div class="card-icon">⬛</div><h3 class="card-title">Blackwork &amp; Geometric</h3><p class="card-text">Dark geometric and ornamental compositions</p></div>
+          <div class="card"><div class="card-icon">🌸</div><h3 class="card-title">Japanese Traditional</h3><p class="card-text">Traditional Irezumi motifs and compositions</p></div>
+        </div>
+      </div>
+    </section>
+    <section class="page" data-index="2" id="portfolio">
+      <div class="section-content">
+        <div class="section-header reveal-3d"><h2 class="section-title">OUR WORK</h2><p class="section-subtitle">Selected tattoos</p></div>
+        <div class="cards-grid reveal-3d">
+          <div class="card"><div class="card-icon">💪</div><h3 class="card-title">Portrait Realism</h3><p class="card-text">Full sleeve, 40 hours work</p></div>
+          <div class="card"><div class="card-icon">🐉</div><h3 class="card-title">Japanese Dragon</h3><p class="card-text">Back piece, traditional Irezumi style</p></div>
+          <div class="card"><div class="card-icon">⬡</div><h3 class="card-title">Geometric Sleeve</h3><p class="card-text">Blackwork with mandala centrepiece</p></div>
+          <div class="card"><div class="card-icon">🌿</div><h3 class="card-title">Botanical</h3><p class="card-text">Fine lines, feminine shoulder placement</p></div>
+        </div>
+      </div>
+    </section>
+    <section class="page" data-index="3" id="process">
+      <div class="section-content">
+        <div class="section-header reveal-3d"><h2 class="section-title">HOW IT WORKS</h2></div>
+        <div class="process-steps reveal-3d">
+          <div class="step"><div class="step-num">01</div><div class="step-icon">💬</div><h3 class="step-title">Consultation</h3><p class="step-text">Discuss idea, style and placement</p></div>
+          <div class="step-arrow">→</div>
+          <div class="step"><div class="step-num">02</div><div class="step-icon">🎨</div><h3 class="step-title">Design</h3><p class="step-text">Custom sketch made for your request</p></div>
+          <div class="step-arrow">→</div>
+          <div class="step"><div class="step-num">03</div><div class="step-icon">📋</div><h3 class="step-title">Stencil</h3><p class="step-text">Apply stencil and confirm placement</p></div>
+          <div class="step-arrow">→</div>
+          <div class="step"><div class="step-num">04</div><div class="step-icon">✅</div><h3 class="step-title">Tattoo</h3><p class="step-text">Work done, full aftercare instructions</p></div>
+        </div>
+      </div>
+    </section>
+    <section class="page" data-index="4" id="about">
+      <div class="section-content">
+        <div class="section-header reveal-3d"><h2 class="section-title">THE STUDIO</h2><p class="section-subtitle">Professional tattoo studio since 2015</p></div>
+        <div class="about-layout reveal-3d">
+          <div class="about-text">
+            <p>INK HEART is where ideas become art. Every session uses sterile single-use needles, professional grade inks, and individually wrapped equipment.</p>
+            <p>We never rush. Great tattoos take time — and we give every client the full attention they deserve.</p>
+            <div class="about-stats">
+              <div class="stat"><span class="stat-num" style="color:#E74C3C">9</span><span class="stat-label">years</span></div>
+              <div class="stat"><span class="stat-num" style="color:#E74C3C">5000+</span><span class="stat-label">works</span></div>
+              <div class="stat"><span class="stat-num" style="color:#E74C3C">4</span><span class="stat-label">masters</span></div>
+              <div class="stat"><span class="stat-num" style="color:#E74C3C">100%</span><span class="stat-label">sterile</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="page" data-index="5" id="contact">
+      <div class="section-content">
+        <div class="section-header reveal-3d"><h2 class="section-title">BOOK NOW</h2><p class="section-subtitle">Reserve your session</p></div>
+        <div class="contact-layout reveal-3d">
+          <div class="contact-info">
+            <div class="contact-item"><span class="contact-icon">📞</span><a href="tel:+79992345678">+7 (999) 234-56-78</a></div>
+            <div class="contact-item"><span class="contact-icon">✉️</span><a href="mailto:book@inkheart.ru">book@inkheart.ru</a></div>
+            <div class="contact-item"><span class="contact-icon">📍</span><span>St. Petersburg, Nevsky Ave., 88</span></div>
+            <div class="contact-item"><span class="contact-icon">🕐</span><span>Tue–Sun: 12:00–22:00</span></div>
+          </div>
+          <form class="contact-form" id="contact-form">
+            <input type="text" placeholder="Your name" required />
+            <input type="tel" placeholder="Phone number" required />
+            <select><option value="">Style of interest...</option><option>Black &amp; Grey Realism</option><option>Colour Realism</option><option>Blackwork</option><option>Japanese</option></select>
+            <textarea placeholder="Describe your tattoo idea..." rows="3"></textarea>
+            <button type="submit" class="btn-primary" id="submit-btn">Book Session</button>
+          </form>
+        </div>
+        <footer class="site-footer"><p>© 2024 INK HEART. All rights reserved.</p></footer>
+      </div>
+    </section>
+  </div></div>
+  <script src="app.js"></script>
+</body>
+</html>
